@@ -1,8 +1,8 @@
 # Define an AWS EC2 instance
 resource "aws_instance" "jenkinsec2" {
-  ami                    = "ami-062a49a8152e4c031"
+  ami                    = "ami-0e53db6fd757e38c7"
   instance_type          = "t2.medium"
-  key_name               = "project12_key"
+  key_name               = "demotest"
   subnet_id              = aws_subnet.public-jenkins-subnet.id
   security_groups        = [aws_security_group.jenkins-sg.id]
   associate_public_ip_address = true
@@ -14,7 +14,7 @@ resource "aws_instance" "jenkinsec2" {
 }
 
 resource "aws_s3_bucket" "my-static-web-bucket" {
-  bucket = "jenkinstf-ec2-static-bucket"  # Replace with your desired bucket name
+  bucket = "jenkinstf-ec2-static-bucket99"  # Replace with your desired bucket name
 
 }
 resource "aws_s3_bucket_website_configuration" "my-static-web-bucket" {
